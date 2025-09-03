@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Free Tools</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="All-in-One Free Tools: BMI Calculator, Age Calculator, Word Counter, QR Code Generator, and GST Calculator. Free, simple, and fast online utilities.">
+    <meta name="keywords" content="free online tools, BMI calculator, age calculator, word counter, QR code generator, GST calculator, online utilities, health tools, productivity tools">
+    <meta name="author" content="All-in-One Free Tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="All-in-One Free Tools - Free Online Utilities">
+    <meta property="og:description" content="Access powerful free tools for health, productivity, and finance calculations. BMI, Age, Word Counter, QR Generator, and GST Calculator.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All-in-One Free Tools">
+    <meta name="twitter:description" content="Free online utilities for BMI, Age, Word Counter, QR Generator, and GST calculations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #495057;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #495057;
+            background: #f8f9fa;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Homepage Styles */
+        .hero {
+            text-align: center;
+            color: #333;
+            padding: 3rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-color: #dee2e6;
+        }
+
+        .tool-card h3 {
+            color: #495057;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: #6c757d;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Tool Section Styles */
+        .tool-section {
+            display: none;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-section.active {
+            display: block;
+        }
+
+        .tool-section h2 {
+            color: #495057;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Button Styles */
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: 0.25rem;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        /* Result Styles */
+        .result {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .result h3 {
+            color: #495057;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+
+        .result-category {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .category-underweight { 
+            background: #d4edda; 
+            color: #155724; 
+        }
+        .category-normal { 
+            background: #d1ecf1; 
+            color: #0c5460; 
+        }
+        .category-overweight { 
+            background: #fff3cd; 
+            color: #856404; 
+        }
+        .category-obese { 
+            background: #f8d7da; 
+            color: #721c24; 
+        }
+
+        /* Simple stacked list styles used by some tools */
+        .inline-group { 
+            display: flex; 
+            gap: 1rem; 
+            flex-wrap: wrap; 
+            align-items: center; 
+            margin: 1rem 0;
+        }
+        .muted { 
+            color: #6c757d; 
+            font-size: 0.9rem; 
+        }
+
+        /* Counter display */
+        .counter-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .counter-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Back Button */
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background: #545b62;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #e9ecef;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .counter-display {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: #212529;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .navbar {
+            background: #343a40;
+            border-bottom: 1px solid #495057;
+        }
+
+        body.dark-mode .nav-links a {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .nav-links a:hover,
+        body.dark-mode .nav-links a.active {
+            color: #f8f9fa;
+            background: #495057;
+        }
+
+        body.dark-mode .tool-section,
+        body.dark-mode .tool-card {
+            background: #343a40;
+            border: 1px solid #495057;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea,
+        body.dark-mode .form-group select {
+            background: #495057;
+            border-color: #6c757d;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .form-group input:focus,
+        body.dark-mode .form-group textarea:focus,
+        body.dark-mode .form-group select:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        body.dark-mode .result {
+            background: #495057;
+            border: 1px solid #6c757d;
+        }
+
+        body.dark-mode .counter-item {
+            background: #495057;
+            border: 1px solid #6c757d;
+        }
+
+        
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            margin-left: 1rem;
+            color: #495057;
+        }
+
+        .theme-toggle:hover {
+            background: #e9ecef;
+        }
+
+        body.dark-mode .theme-toggle {
+            color: #f8f9fa;
+            background: #495057;
+            border: 1px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">All-in-One Free Tools</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showSection('home')" class="nav-link">Home</a></li>
+                <li><a href="#" onclick="showSection('bmi')" class="nav-link">BMI Calculator</a></li>
+                <li><a href="#" onclick="showSection('age')" class="nav-link">Age Calculator</a></li>
+                <li><a href="#" onclick="showSection('word')" class="nav-link">Word Counter</a></li>
+                <li><a href="#" onclick="showSection('gst')" class="nav-link">GST Calculator</a></li>
+                <li><a href="#" onclick="showSection('case')" class="nav-link">Text Case</a></li>
+                <li><a href="#" onclick="showSection('spaces')" class="nav-link">Remove Spaces</a></li>
+                <li><a href="#" onclick="showSection('password')" class="nav-link">Password Gen</a></li>
+                <li><a href="#" onclick="showSection('interest')" class="nav-link">Interest Calc</a></li>
+                <li><a href="#" onclick="showSection('sip')" class="nav-link">SIP Calc</a></li>
+                <li><a href="#" onclick="showSection('currency')" class="nav-link">Currency Conv</a></li>
+                <li><a href="#" onclick="showSection('units')" class="nav-link">Unit Conv</a></li>
+                <li><a href="#" onclick="showSection('percent')" class="nav-link">Percentage</a></li>
+                <li><a href="#" onclick="showSection('tip')" class="nav-link">Tip Calc</a></li>
+                <li><a href="#" onclick="showSection('jokes')" class="nav-link">Jokes</a></li>
+                <li><a href="#" onclick="showSection('quotes')" class="nav-link">Quotes</a></li>
+                <li><a href="#" onclick="showSection('nickname')" class="nav-link">Nickname</a></li>
+            </ul>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">🌙</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Mobile Menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Homepage Section -->
+        <section id="home" class="tool-section active">
+            <div class="hero">
+                <h1>Welcome to All-in-One Free Tools</h1>
+                <p>Quick and Simple Online Utilities</p>
+                <p>Access powerful tools for health, productivity, and finance calculations</p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card" onclick="showSection('bmi')">
+                    <h3>BMI Calculator</h3>
+                    <p>Calculate your Body Mass Index and get health category recommendations based on your height and weight.</p>
+                </div>
+
+                <div class="tool-card" onclick="showSection('age')">
+                    <h3>Age Calculator</h3>
+                    <p>Find out your exact age in years, months, and days from your date of birth.</p>
+                </div>
+
+                <div class="tool-card" onclick="showSection('word')">
+                    <h3>Word Counter</h3>
+                    <p>Count words and characters in your text instantly. Perfect for writers and content creators.</p>
+                </div>
+
+                <div class="tool-card" onclick="showSection('case')">
+                    <h3>Text Case Converter</h3>
+                    <p>Convert text to UPPERCASE, lowercase, and Title Case instantly.</p>
+                </div>
+
+                <div class="tool-card" onclick="showSection('gst')">
+                    <h3>GST Calculator</h3>
+                    <p>Calculate GST amount and final price for Indian tax calculations with customizable tax rates.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('spaces')">
+                    <h3>Remove Extra Spaces</h3>
+                    <p>Clean extra spaces, tabs, and line breaks from your text.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('password')">
+                    <h3>Password Generator</h3>
+                    <p>Create strong random passwords with options for length and characters.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('interest')">
+                    <h3>Interest Calculator</h3>
+                    <p>Calculate Simple and Compound Interest quickly.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('sip')">
+                    <h3>SIP Calculator</h3>
+                    <p>Estimate mutual fund SIP returns over time.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('currency')">
+                    <h3>Currency Converter</h3>
+                    <p>Convert between currencies using sample fixed rates.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('units')">
+                    <h3>Unit Converter</h3>
+                    <p>Convert length, weight, and temperature units.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('percent')">
+                    <h3>Percentage Calculator</h3>
+                    <p>Compute discounts, marks, and percentage changes.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('tip')">
+                    <h3>Tip Calculator</h3>
+                    <p>Split restaurant bills with tip among people.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('jokes')">
+                    <h3>Random Joke</h3>
+                    <p>Lighten up with a random preset joke.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('quotes')">
+                    <h3>Motivational Quote</h3>
+                    <p>Get inspired with a random motivational quote.</p>
+                </div>
+                <div class="tool-card" onclick="showSection('nickname')">
+                    <h3>Nickname Generator</h3>
+                    <p>Generate fun nickname and username ideas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BMI Calculator Section -->
+        <section id="bmi" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>BMI Calculator</h2>
+            
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" placeholder="Enter height in centimeters" min="50" max="300">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" placeholder="Enter weight in kilograms" min="10" max="500" step="0.1">
+            </div>
+
+            <button class="btn" onclick="calculateBMI()">Calculate BMI</button>
+            <button class="btn btn-secondary" onclick="clearBMIFields()">Clear</button>
+
+            <div id="bmiResult" class="result" style="display: none;">
+                <h3>Your BMI Result</h3>
+                <div class="result-value" id="bmiValue"></div>
+                <div class="result-category" id="bmiCategory"></div>
+            </div>
+        </section>
+
+        <!-- Age Calculator Section -->
+        <section id="age" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Age Calculator</h2>
+            
+            <div class="form-group">
+                <label for="birthDate">Date of Birth:</label>
+                <input type="date" id="birthDate">
+            </div>
+
+            <button class="btn" onclick="calculateAge()">Calculate Age</button>
+            <button class="btn btn-secondary" onclick="clearAgeFields()">Clear</button>
+
+            <div id="ageResult" class="result" style="display: none;">
+                <h3>Your Age</h3>
+                <div class="result-value" id="ageValue"></div>
+                <p id="ageBreakdown"></p>
+            </div>
+        </section>
+
+        <!-- Word Counter Section -->
+        <section id="word" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Word Counter</h2>
+            
+            <div class="form-group">
+                <label for="textInput">Enter your text:</label>
+                <textarea id="textInput" rows="10" placeholder="Paste or type your text here..." oninput="updateWordCount()"></textarea>
+            </div>
+
+            <div class="counter-display">
+                <div class="counter-item">
+                    <div class="counter-number" id="wordCount">0</div>
+                    <div class="counter-label">Words</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="charCount">0</div>
+                    <div class="counter-label">Characters</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="charNoSpaceCount">0</div>
+                    <div class="counter-label">Characters (no spaces)</div>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" onclick="clearText()">Clear Text</button>
+        </section>
+
+        <!-- Text Case Converter -->
+        <section id="case" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Text Case Converter</h2>
+            <div class="form-group">
+                <label for="caseInput">Enter text:</label>
+                <textarea id="caseInput" rows="6" placeholder="Type or paste your text..."></textarea>
+            </div>
+            <div class="inline-group">
+                <button class="btn" onclick="toUpperCaseText()">UPPERCASE</button>
+                <button class="btn" onclick="toLowerCaseText()">lowercase</button>
+                <button class="btn" onclick="toTitleCaseText()">Title Case</button>
+                <button class="btn btn-secondary" onclick="clearCase()">Clear</button>
+            </div>
+        </section>
+
+        <!-- Remove Extra Spaces -->
+        <section id="spaces" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Remove Extra Spaces</h2>
+            <div class="form-group">
+                <label for="spacesInput">Enter text:</label>
+                <textarea id="spacesInput" rows="6" placeholder="Text with    extra   spaces..."></textarea>
+            </div>
+            <div class="inline-group">
+                <button class="btn" onclick="removeSpaces()">Clean Spaces</button>
+                <span class="muted">Replaces multiple spaces, trims lines, normalizes whitespace</span>
+            </div>
+        </section>
+
+        <!-- Password Generator -->
+        <section id="password" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Password Generator</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pwdLength">Length</label>
+                    <input type="number" id="pwdLength" min="6" max="64" value="12">
+                </div>
+                <div class="form-group">
+                    <label>Options</label>
+                    <div class="inline-group">
+                        <label><input type="checkbox" id="optUpper" checked> Uppercase</label>
+                        <label><input type="checkbox" id="optLower" checked> Lowercase</label>
+                        <label><input type="checkbox" id="optNums" checked> Numbers</label>
+                        <label><input type="checkbox" id="optSyms" checked> Symbols</label>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-group">
+                <button class="btn" onclick="generatePassword()">Generate</button>
+                <button class="btn btn-secondary" onclick="copyPassword()">Copy</button>
+            </div>
+            <div class="result" id="pwdResult" style="display:none;">
+                <h3>Your Password</h3>
+                <div class="result-value" id="pwdValue"></div>
+            </div>
+        </section>
+
+        <!-- Interest Calculator -->
+        <section id="interest" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Simple & Compound Interest</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="principal">Principal (₹)</label>
+                    <input type="number" id="principal" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="rate">Rate (%)</label>
+                    <input type="number" id="rate" min="0" step="0.01" value="8">
+                </div>
+                <div class="form-group">
+                    <label for="timeYears">Time (years)</label>
+                    <input type="number" id="timeYears" min="0" step="0.1" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="compFreq">Compound frequency</label>
+                    <select id="compFreq">
+                        <option value="1">Yearly</option>
+                        <option value="4">Quarterly</option>
+                        <option value="12">Monthly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inline-group">
+                <button class="btn" onclick="calcSimpleInterest()">Calculate Simple Interest</button>
+                <button class="btn" onclick="calcCompoundInterest()">Calculate Compound Interest</button>
+            </div>
+            <div class="result" id="interestResult" style="display:none;">
+                <h3>Interest Result</h3>
+                <div id="interestDetails"></div>
+            </div>
+        </section>
+
+        <!-- SIP Calculator -->
+        <section id="sip" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>SIP Calculator</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sipAmount">Monthly Investment (₹)</label>
+                    <input type="number" id="sipAmount" min="0" step="1" value="1000">
+                </div>
+                <div class="form-group">
+                    <label for="sipRate">Expected Return (p.a. %)</label>
+                    <input type="number" id="sipRate" min="0" step="0.1" value="12">
+                </div>
+                <div class="form-group">
+                    <label for="sipYears">Time (years)</label>
+                    <input type="number" id="sipYears" min="1" step="1" value="10">
+                </div>
+            </div>
+            <button class="btn" onclick="calcSIP()">Calculate SIP</button>
+            <div class="result" id="sipResult" style="display:none;">
+                <h3>SIP Result</h3>
+                <div id="sipDetails"></div>
+            </div>
+        </section>
+
+        <!-- Currency Converter -->
+        <section id="currency" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Currency Converter (Sample Rates)</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="curAmount">Amount</label>
+                    <input type="number" id="curAmount" min="0" step="0.01" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="fromCur">From</label>
+                    <select id="fromCur">
+                        <option value="INR">INR</option>
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="toCur">To</label>
+                    <select id="toCur">
+                        <option value="INR" selected>INR</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" onclick="convertCurrency()">Convert</button>
+            <div class="result" id="curResult" style="display:none;">
+                <h3>Converted Amount</h3>
+                <div class="result-value" id="curValue"></div>
+                <div class="muted" id="curNote"></div>
+            </div>
+        </section>
+
+        <!-- Unit Converter -->
+        <section id="units" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Unit Converter</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="unitType">Type</label>
+                    <select id="unitType" onchange="updateUnitLabels()">
+                        <option value="length">Length</option>
+                        <option value="weight">Weight</option>
+                        <option value="temp">Temperature</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="unitInput">Value</label>
+                    <input type="number" id="unitInput" step="0.01" value="1">
+                </div>
+            </div>
+            <button class="btn" onclick="convertUnits()">Convert</button>
+            <div class="result" id="unitResult" style="display:none;">
+                <h3>Converted Values</h3>
+                <div id="unitDetails"></div>
+            </div>
+        </section>
+
+        <!-- Percentage Calculator -->
+        <section id="percent" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Percentage Calculator</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="baseVal">Base Value</label>
+                    <input type="number" id="baseVal" step="0.01" value="100">
+                </div>
+                <div class="form-group">
+                    <label for="percVal">Percentage (%)</label>
+                    <input type="number" id="percVal" step="0.01" value="10">
+                </div>
+            </div>
+            <div class="inline-group">
+                <button class="btn" onclick="calcPercentageOf()">What is % of</button>
+                <button class="btn" onclick="calcPercentageIncrease()">% Increase</button>
+                <button class="btn" onclick="calcPercentageDecrease()">% Decrease</button>
+            </div>
+            <div class="result" id="percResult" style="display:none;">
+                <h3>Result</h3>
+                <div class="result-value" id="percValue"></div>
+            </div>
+        </section>
+
+        <!-- Tip Calculator -->
+        <section id="tip" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Tip Calculator</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="billAmount">Bill Amount (₹)</label>
+                    <input type="number" id="billAmount" step="0.01" value="1000">
+                </div>
+                <div class="form-group">
+                    <label for="tipPercent">Tip (%)</label>
+                    <input type="number" id="tipPercent" step="0.1" value="10">
+                </div>
+                <div class="form-group">
+                    <label for="numPeople">People</label>
+                    <input type="number" id="numPeople" min="1" value="2">
+                </div>
+            </div>
+            <button class="btn" onclick="calcTip()">Split Bill</button>
+            <div class="result" id="tipResult" style="display:none;">
+                <h3>Split Result</h3>
+                <div id="tipDetails"></div>
+            </div>
+        </section>
+
+        <!-- Random Joke Generator -->
+        <section id="jokes" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Random Joke</h2>
+            <button class="btn" onclick="generateJoke()">Get Joke</button>
+            <div class="result" id="jokeResult" style="display:none;">
+                <div id="jokeText" class="result-value" style="font-size:1.2rem"></div>
+            </div>
+        </section>
+
+        <!-- Motivational Quote Generator -->
+        <section id="quotes" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Motivational Quote</h2>
+            <button class="btn" onclick="generateQuote()">Get Quote</button>
+            <div class="result" id="quoteResult" style="display:none;">
+                <div id="quoteText" class="result-value" style="font-size:1.2rem"></div>
+            </div>
+        </section>
+
+        <!-- Nickname / Username Generator -->
+        <section id="nickname" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>Nickname / Username Generator</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nickBase">Your name (optional)</label>
+                    <input type="text" id="nickBase" placeholder="e.g., Sam">
+                </div>
+                <div class="form-group">
+                    <label for="nickCount">How many</label>
+                    <input type="number" id="nickCount" min="1" max="10" value="5">
+                </div>
+            </div>
+            <button class="btn" onclick="generateNicknames()">Generate</button>
+            <div class="result" id="nickResult" style="display:none;">
+                <h3>Suggestions</h3>
+                <div id="nickList"></div>
+            </div>
+        </section>
+
+        <!-- GST Calculator Section -->
+        <section id="gst" class="tool-section">
+            <button class="back-btn" onclick="showSection('home')">← Back to Home</button>
+            <h2>GST Calculator (India)</h2>
+            
+            <div class="form-group">
+                <label for="amount">Amount (₹):</label>
+                <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="gstRate">GST Rate (%):</label>
+                <select id="gstRate">
+                    <option value="0">0% (Exempt)</option>
+                    <option value="5">5%</option>
+                    <option value="12">12%</option>
+                    <option value="18" selected>18% (Standard)</option>
+                    <option value="28">28%</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="calculateGST()">Calculate GST</button>
+            <button class="btn btn-secondary" onclick="clearGSTFields()">Clear</button>
+
+            <div id="gstResult" class="result" style="display: none;">
+                <h3>GST Calculation Result</h3>
+                <div style="text-align: left; max-width: 300px; margin: 0 auto;">
+                    <p><strong>Original Amount:</strong> ₹<span id="originalAmount"></span></p>
+                    <p><strong>GST Amount:</strong> ₹<span id="gstAmount"></span></p>
+                    <p><strong>Final Amount:</strong> ₹<span id="finalAmount"></span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Navigation Functions
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.tool-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick').includes(sectionId)) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                themeToggle.title = 'Switch to Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                themeToggle.title = 'Switch to Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // BMI Calculator Functions
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+
+            if (!height || !weight || height <= 0 || weight <= 0) {
+                alert('Please enter valid height and weight values.');
+                return;
+            }
+
+            const bmi = weight / Math.pow(height / 100, 2);
+            const bmiRounded = Math.round(bmi * 10) / 10;
+
+            let category = '';
+            let categoryClass = '';
+
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                categoryClass = 'category-underweight';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'Normal weight';
+                categoryClass = 'category-normal';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+                categoryClass = 'category-overweight';
+            } else {
+                category = 'Obese';
+                categoryClass = 'category-obese';
+            }
+
+            document.getElementById('bmiValue').textContent = bmiRounded;
+            document.getElementById('bmiCategory').textContent = category;
+            document.getElementById('bmiCategory').className = `result-category ${categoryClass}`;
+            document.getElementById('bmiResult').style.display = 'block';
+        }
+
+        function clearBMIFields() {
+            document.getElementById('height').value = '';
+            document.getElementById('weight').value = '';
+            document.getElementById('bmiResult').style.display = 'none';
+        }
+
+        // Age Calculator Functions
+        function calculateAge() {
+            const birthDate = document.getElementById('birthDate').value;
+
+            if (!birthDate) {
+                alert('Please select your date of birth.');
+                return;
+            }
+
+            const birth = new Date(birthDate);
+            const today = new Date();
+
+            if (birth > today) {
+                alert('Birth date cannot be in the future.');
+                return;
+            }
+
+            let years = today.getFullYear() - birth.getFullYear();
+            let months = today.getMonth() - birth.getMonth();
+            let days = today.getDate() - birth.getDate();
+
+            if (days < 0) {
+                months--;
+                const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += lastMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const totalDays = Math.floor((today - birth) / (1000 * 60 * 60 * 24));
+
+            document.getElementById('ageValue').textContent = `${years} years, ${months} months, ${days} days`;
+            document.getElementById('ageBreakdown').textContent = `Total days lived: ${totalDays.toLocaleString()}`;
+            document.getElementById('ageResult').style.display = 'block';
+        }
+
+        function clearAgeFields() {
+            document.getElementById('birthDate').value = '';
+            document.getElementById('ageResult').style.display = 'none';
+        }
+
+        // Word Counter Functions
+        function updateWordCount() {
+            const text = document.getElementById('textInput').value;
+            
+            // Word count (split by whitespace and filter empty strings)
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = text.trim() === '' ? 0 : words.length;
+            
+            // Character counts
+            const charCount = text.length;
+            const charNoSpaceCount = text.replace(/\s/g, '').length;
+
+            document.getElementById('wordCount').textContent = wordCount;
+            document.getElementById('charCount').textContent = charCount;
+            document.getElementById('charNoSpaceCount').textContent = charNoSpaceCount;
+        }
+
+        function clearText() {
+            document.getElementById('textInput').value = '';
+            updateWordCount();
+        }
+
+        // Text Case Converter
+        function toUpperCaseText() {
+            const el = document.getElementById('caseInput');
+            el.value = el.value.toUpperCase();
+        }
+        function toLowerCaseText() {
+            const el = document.getElementById('caseInput');
+            el.value = el.value.toLowerCase();
+        }
+        function toTitleCaseText() {
+            const el = document.getElementById('caseInput');
+            el.value = el.value.toLowerCase().replace(/\b\w+/g, w => w.charAt(0).toUpperCase() + w.slice(1));
+        }
+        function clearCase() {
+            document.getElementById('caseInput').value = '';
+        }
+
+        // Remove Extra Spaces
+        function removeSpaces() {
+            const el = document.getElementById('spacesInput');
+            const cleaned = el.value
+                .split('\n')
+                .map(line => line.replace(/\s+/g, ' ').trim())
+                .join('\n')
+                .replace(/\n{3,}/g, '\n\n');
+            el.value = cleaned.trim();
+        }
+
+        // Password Generator
+        function generatePassword() {
+            const length = Math.max(6, Math.min(64, parseInt(document.getElementById('pwdLength').value || '12')));
+            const useU = document.getElementById('optUpper').checked;
+            const useL = document.getElementById('optLower').checked;
+            const useN = document.getElementById('optNums').checked;
+            const useS = document.getElementById('optSyms').checked;
+            const pools = [];
+            if (useU) pools.push('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+            if (useL) pools.push('abcdefghijklmnopqrstuvwxyz');
+            if (useN) pools.push('0123456789');
+            if (useS) pools.push('!@#$%^&*()-_=+[]{};:,.?/');
+            if (pools.length === 0) { alert('Select at least one character set.'); return; }
+            let pwd = '';
+            for (let i = 0; i < length; i++) {
+                const pool = pools[Math.floor(Math.random() * pools.length)];
+                pwd += pool.charAt(Math.floor(Math.random() * pool.length));
+            }
+            document.getElementById('pwdValue').textContent = pwd;
+            document.getElementById('pwdResult').style.display = 'block';
+        }
+        function copyPassword() {
+            const val = document.getElementById('pwdValue').textContent;
+            if (!val) { alert('Generate a password first.'); return; }
+            navigator.clipboard.writeText(val).then(() => alert('Password copied!'));
+        }
+
+        // Simple & Compound Interest
+        function calcSimpleInterest() {
+            const P = parseFloat(document.getElementById('principal').value || '0');
+            const R = parseFloat(document.getElementById('rate').value || '0');
+            const T = parseFloat(document.getElementById('timeYears').value || '0');
+            const SI = P * R * T / 100;
+            const total = P + SI;
+            showInterest(`Simple Interest: ₹${SI.toFixed(2)}<br>Total Amount: ₹${total.toFixed(2)}`);
+        }
+        function calcCompoundInterest() {
+            const P = parseFloat(document.getElementById('principal').value || '0');
+            const R = parseFloat(document.getElementById('rate').value || '0') / 100;
+            const T = parseFloat(document.getElementById('timeYears').value || '0');
+            const n = parseInt(document.getElementById('compFreq').value || '1');
+            const A = P * Math.pow(1 + R / n, n * T);
+            const CI = A - P;
+            showInterest(`Compound Interest: ₹${CI.toFixed(2)}<br>Total Amount: ₹${A.toFixed(2)}`);
+        }
+        function showInterest(html) {
+            document.getElementById('interestDetails').innerHTML = html;
+            document.getElementById('interestResult').style.display = 'block';
+        }
+
+        // SIP Calculator (future value of series)
+        function calcSIP() {
+            const m = parseFloat(document.getElementById('sipAmount').value || '0');
+            const r = parseFloat(document.getElementById('sipRate').value || '0') / 100 / 12;
+            const y = parseInt(document.getElementById('sipYears').value || '0');
+            const n = y * 12;
+            const future = m * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+            const invested = m * n;
+            const gain = future - invested;
+            document.getElementById('sipDetails').innerHTML = `Invested: ₹${invested.toFixed(0)}<br>Estimated Value: ₹${future.toFixed(0)}<br>Gain: ₹${gain.toFixed(0)}`;
+            document.getElementById('sipResult').style.display = 'block';
+        }
+
+        // Currency Converter (fixed sample rates vs INR)
+        const FX = { USD: 83, EUR: 90, INR: 1 };
+        function convertCurrency() {
+            const amt = parseFloat(document.getElementById('curAmount').value || '0');
+            const from = document.getElementById('fromCur').value;
+            const to = document.getElementById('toCur').value;
+            const inINR = amt * FX[from];
+            const out = inINR / FX[to];
+            document.getElementById('curValue').textContent = out.toFixed(2) + ' ' + to;
+            document.getElementById('curNote').textContent = `Rates are examples: USD≈83 INR, EUR≈90 INR.`;
+            document.getElementById('curResult').style.display = 'block';
+        }
+
+        // Unit Converter
+        function updateUnitLabels() {
+            // Placeholder to potentially change labels; calculations handled in convertUnits
+        }
+        function convertUnits() {
+            const type = document.getElementById('unitType').value;
+            const v = parseFloat(document.getElementById('unitInput').value || '0');
+            let html = '';
+            if (type === 'length') {
+                const meters = v;
+                html = `${meters} m = ${(meters * 100).toFixed(2)} cm = ${(meters * 3.28084).toFixed(2)} ft`;
+            } else if (type === 'weight') {
+                const kg = v;
+                html = `${kg} kg = ${(kg * 1000).toFixed(2)} g = ${(kg * 2.20462).toFixed(2)} lb`;
+            } else {
+                const c = v;
+                const f = (c * 9/5) + 32;
+                const k = c + 273.15;
+                html = `${c} °C = ${f.toFixed(2)} °F = ${k.toFixed(2)} K`;
+            }
+            document.getElementById('unitDetails').innerHTML = html;
+            document.getElementById('unitResult').style.display = 'block';
+        }
+
+        // Percentage Calculator
+        function calcPercentageOf() {
+            const base = parseFloat(document.getElementById('baseVal').value || '0');
+            const p = parseFloat(document.getElementById('percVal').value || '0');
+            const res = base * p / 100;
+            showPerc(res);
+        }
+        function calcPercentageIncrease() {
+            const base = parseFloat(document.getElementById('baseVal').value || '0');
+            const p = parseFloat(document.getElementById('percVal').value || '0');
+            const res = base * (1 + p / 100);
+            showPerc(res);
+        }
+        function calcPercentageDecrease() {
+            const base = parseFloat(document.getElementById('baseVal').value || '0');
+            const p = parseFloat(document.getElementById('percVal').value || '0');
+            const res = base * (1 - p / 100);
+            showPerc(res);
+        }
+        function showPerc(v) {
+            document.getElementById('percValue').textContent = v.toFixed(2);
+            document.getElementById('percResult').style.display = 'block';
+        }
+
+        // Tip Calculator
+        function calcTip() {
+            const bill = parseFloat(document.getElementById('billAmount').value || '0');
+            const tip = parseFloat(document.getElementById('tipPercent').value || '0');
+            const people = Math.max(1, parseInt(document.getElementById('numPeople').value || '1'));
+            const tipAmt = bill * tip / 100;
+            const total = bill + tipAmt;
+            const per = total / people;
+            document.getElementById('tipDetails').innerHTML = `Tip: ₹${tipAmt.toFixed(2)}<br>Total: ₹${total.toFixed(2)}<br>Per Person: ₹${per.toFixed(2)}`;
+            document.getElementById('tipResult').style.display = 'block';
+        }
+
+        // Jokes & Quotes
+        const JOKES = [
+            'Why do programmers prefer dark mode? Because light attracts bugs.',
+            'I would tell you a UDP joke, but you might not get it.',
+            'There are 10 kinds of people: those who understand binary and those who don\'t.',
+            'A SQL query walks into a bar, walks up to two tables and asks: Can I join you?'
+        ];
+        function generateJoke() {
+            const joke = JOKES[Math.floor(Math.random() * JOKES.length)];
+            document.getElementById('jokeText').textContent = joke;
+            document.getElementById('jokeResult').style.display = 'block';
+        }
+
+        const QUOTES = [
+            'The best time to plant a tree was 20 years ago. The second best time is now.',
+            'Success is not final; failure is not fatal: It is the courage to continue that counts.',
+            'Do something today that your future self will thank you for.',
+            'Dream big. Start small. Act now.'
+        ];
+        function generateQuote() {
+            const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+            document.getElementById('quoteText').textContent = quote;
+            document.getElementById('quoteResult').style.display = 'block';
+        }
+
+        // Nickname Generator
+        function generateNicknames() {
+            const base = (document.getElementById('nickBase').value || '').trim();
+            const count = Math.max(1, Math.min(10, parseInt(document.getElementById('nickCount').value || '5')));
+            const adjectives = ['Swift','Mighty','Happy','Silent','Crazy','Lucky','Brave','Clever','Nimble','Sunny'];
+            const nouns = ['Tiger','Eagle','Ninja','Wizard','Phoenix','Panda','Samurai','Knight','Coder','Rider'];
+            const results = [];
+            for (let i = 0; i < count; i++) {
+                const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+                const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                const num = Math.floor(Math.random() * 999);
+                const name = [base, adj, noun].filter(Boolean).join('');
+                results.push(name + num);
+            }
+            document.getElementById('nickList').innerHTML = results.map(r => `<div>${r}</div>`).join('');
+            document.getElementById('nickResult').style.display = 'block';
+        }
+
+        // GST Calculator Functions
+        function calculateGST() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const gstRate = parseFloat(document.getElementById('gstRate').value);
+
+            if (!amount || amount < 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            const gstAmount = (amount * gstRate) / 100;
+            const finalAmount = amount + gstAmount;
+
+            document.getElementById('originalAmount').textContent = amount.toFixed(2);
+            document.getElementById('gstAmount').textContent = gstAmount.toFixed(2);
+            document.getElementById('finalAmount').textContent = finalAmount.toFixed(2);
+            document.getElementById('gstResult').style.display = 'block';
+        }
+
+        function clearGSTFields() {
+            document.getElementById('amount').value = '';
+            document.getElementById('gstRate').value = '18';
+            document.getElementById('gstResult').style.display = 'none';
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default date for age calculator (18 years ago)
+            const defaultDate = new Date();
+            defaultDate.setFullYear(defaultDate.getFullYear() - 18);
+            document.getElementById('birthDate').max = new Date().toISOString().split('T')[0];
+            
+            // Initialize word counter
+            updateWordCount();
+            
+            // Initialize theme from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️';
+                themeToggle.title = 'Switch to Light Mode';
+            } else {
+                themeToggle.textContent = '🌙';
+                themeToggle.title = 'Switch to Dark Mode';
+            }
+            
+            // Set Home as active on page load
+            document.querySelector('.nav-link').classList.add('active');
+        });
+    </script>
+</body>
+</html>
